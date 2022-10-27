@@ -1,34 +1,80 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# A Modern User Interface With Chakra UI
+
+This project is made following course on [egghead.io](https://egghead.io/courses/build-a-modern-user-interface-with-chakra-ui-fac68106) Getting Started With Chakra UI
+
+## Live
+
+See the project live [here]()
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
 # or
+yarn install
 yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Notes
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Installation And Setup
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Install Chakra UI packages.
+- Override the boilerplate \_app.tsx.
+- Wrap Component with ChakraProvider.
 
-## Learn More
+### Build Layout
 
-To learn more about Next.js, take a look at the following resources:
+- We used the Container component to keep our content contained and centered.
+- The Flex, Stack, VStack components are use to stack the inner elements.
+- Style props are added to components to for width, height, color, bgColor, etc. which have access to the design tokens built in Chakra UI.
+- Read more about the style props on Chakra UI docs.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Built A 2-Column Form
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- All components have a unique set of style props that can be used to tweak the element's appearance.
+- SimpleGrid component was used to easily create a two column layout for the form.
 
-## Deploy on Vercel
+### Theme Switcher
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Use useColorMode hook to switch between light and dark modes.
+- The useColorModeValue helps use different color values based on the current color mode.
+- Here, useColorModeValue was used to set the background color of the second(cart) section and to set the color of some Text components.
+- Use the result of useColorModeValue as style prop values.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Make The App Responsive
+
+- There are three ways to achieve responsive design in Chakra UI
+  - The Array syntax.
+  - The Object syntax.
+  - The useBreakpointValue hook.
+- Use the `Array` syntax if you want to provide different values for every breakpoint.
+- Use the `Object` syntax if you want to switch between two values because of its simplicity.
+- Use the `useBreakpointValue` hook if you want to make the `variant` or `size` props responsive.
+
+### Define Custom Fonts And Colors
+
+- Chakra UI comes with an `extendTheme` method that is used to build our custom theme.
+- Tell Chakra UI to use the custom theme by passing it to the ChakraProvider.
+- Here we've added a custom brand color scale and custom fonts.
+- In a similar way, we can customize sizes, breakpoints, shadows, spacing and other design tokens.
+
+### Use Theme Extensions
+
+- Style extensions can be used to set style rules for all instances of a component, without having to manuall set style rules for each of them.
+- Chakra UI comes with a few built in style extensions like withDefaultVariant, withDefaultColorScheme, etc.
+
+### Override Built-In Component Styles
+
+- We can override the component style configuration by creating a property inside the components section in theme.
+- Overriding the style configuration based on the component state(hover, focus, etc) is also possible.
+- Some components are multipart, and they have different style configurations for each part.
+
+### Create Custom Variants
+
+- We can create our own `variants` that have specific style configurations.
+- Variants can either be a plain object, or an arrow function that accepts `props` as arguments.
+- We used the `mode` method to set different values for the light and dark modes.

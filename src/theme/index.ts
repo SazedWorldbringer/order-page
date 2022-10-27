@@ -24,6 +24,13 @@ const inputSelectStyles = {
   },
 };
 
+const brandRing = {
+  _focus: {
+    ring: 2,
+    ringColor: "brand.500",
+  },
+};
+
 const theme = extendTheme(
   {
     colors: {
@@ -45,16 +52,21 @@ const theme = extendTheme(
       body: `Space Mono, ${base.fonts?.body}`,
     },
     components: {
+      Button: {
+        variants: {
+          primary: {
+            rounded: "none",
+            ...brandRing,
+          },
+        },
+      },
       Input: { ...inputSelectStyles },
       Select: { ...inputSelectStyles },
       Checkbox: {
         baseStyle: {
           control: {
             borderRadius: "none",
-            _focus: {
-              ring: 2,
-              ringColor: "brand.500",
-            },
+            ...brandRing,
           },
         },
       },

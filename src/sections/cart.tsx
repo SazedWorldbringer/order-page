@@ -29,7 +29,7 @@ const Cart = () => {
       alignItems="flex-start"
       bg={bgColor}
     >
-      <VStack>
+      <VStack spacing={3} alignItems="flex-start">
         <Heading size={"2xl"}>Your Cart</Heading>
         <Text>
           If price is too hard on your eyes,{" "}

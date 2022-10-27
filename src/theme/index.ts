@@ -4,6 +4,7 @@ import {
   withDefaultColorScheme,
   withDefaultVariant,
 } from "@chakra-ui/react";
+import { mode } from "@chakra-ui/theme-tools";
 
 const inputSelectStyles = {
   variants: {
@@ -54,10 +55,20 @@ const theme = extendTheme(
     components: {
       Button: {
         variants: {
-          primary: {
+          primary: (props) => ({
             rounded: "none",
             ...brandRing,
-          },
+            color: mode("gray.100", "gray.800")(props),
+            backgroundColor: mode("brand.500", "brand.200")(props),
+
+            _hover: {
+              backgroundColor: mode("brand.600", "brand.300")(props),
+            },
+
+            _active: {
+              backgroundColor: mode("brand.700", "brand.400")(props),
+            },
+          }),
         },
       },
       Input: { ...inputSelectStyles },

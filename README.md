@@ -2,9 +2,13 @@
 
 This project is made following course on [egghead.io](https://egghead.io/courses/build-a-modern-user-interface-with-chakra-ui-fac68106) Getting Started With Chakra UI
 
+## Preview
+
+![Preview image of the Order Page User Interface made with Chakra UI](./public/image/preview.png)
+
 ## Live
 
-See the project live [here]()
+See the project live [here](https://chakra-order-page.vercel.app)
 
 ## Getting Started
 

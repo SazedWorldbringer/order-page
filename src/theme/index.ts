@@ -55,7 +55,7 @@ const theme = extendTheme(
     components: {
       Button: {
         variants: {
-          primary: (props) => ({
+          primary: (props: any) => ({
             rounded: "none",
             ...brandRing,
             color: mode("gray.100", "gray.800")(props),

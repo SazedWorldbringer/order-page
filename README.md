@@ -4,7 +4,7 @@ This project is made following course on [egghead.io](https://egghead.io/courses
 
 ## Preview
 
-![Preview image of the Order Page User Interface made with Chakra UI](./public/image/preview.png)
+![Preview image of the Order Page User Interface made with Chakra UI](./public/images/preview.png)
 
 ## Live
 

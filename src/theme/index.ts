@@ -32,8 +32,14 @@ const brandRing = {
   },
 };
 
+const config = {
+  initialColorMode: "dark",
+  useSystemColorMode: true,
+};
+
 const theme = extendTheme(
   {
+    config,
     colors: {
       brand: {
         50: "#f5fee5",
